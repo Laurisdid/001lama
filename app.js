@@ -148,3 +148,7 @@ if (d4 === 0){
 console.log ("0 yra : ",nuliu);
 console.log ("1 yra : ",vienetu);
 console.log ("2 yra : ",dvejetu);
+
+console.log('uzd ----------5---------------');
+
+
