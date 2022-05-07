@@ -89,3 +89,36 @@ console.log(sum8," suma iki 18");
 console.log("atmestu suma =",atmestusum," atmesta kartu =", atmesti);
 console.log("lyginiu skaiciu yra ", lyginiai);
 console.log("nelyginiu skaiciu yra ", nelyginiai)
+
+
+
+// let sk8f;
+// for(i=0;i<20;i++){
+
+// sk8f = rand(10,25);
+// } 
+
+
+console.log('uzd ---------9---------------');
+
+let sk9=0;
+let vidin=0;
+let isorin=0;
+let treciolyg=0;
+let lygus5=0;
+
+while (sk9 !== 5){
+    sk9= rand(5,10);
+    isorin++;
+    if (sk9 ==5){
+        lygus5++;
+    }
+    for(i=0;i<sk9;i++){
+        vidin++;
+    }
+    if (sk9 == 5 && lygus5<3){
+       treciolyg++;
+    }
+    
+}
+console.log(`vidinis ciklas sukosi ${vidin} isorinis ciklas sukosi ${isorin} `);
