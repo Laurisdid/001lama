@@ -122,3 +122,32 @@ while (sk9 !== 5){
     
 }
 console.log(`vidinis ciklas sukosi ${vidin} isorinis ciklas sukosi ${isorin} `);
+
+
+
+
+console.log('uzd ---------10---------------');
+
+let k =0;
+let p=0;
+
+let kr=0;
+let pr=0;
+
+while ( k<=222 || p<= 222){
+    kr= rand(10,20)
+    pr= rand(5,25)
+    if (kr>pr){
+        console.log('raunda laimi K')
+    }else{
+        console.log('raunda laimi P') 
+    }
+     p=p+pr;
+     k=k+kr;
+     console.log(` K ${k}           P ${p} `)
+}
+if (k>p){
+    console.log(`zaidima laimi K surinkes ${k} kai jo oponentas p surinko ${p} `) 
+}else{
+    console.log(`zaidima laimi P surinkes ${p} kai jo oponentas K surinko ${k} `) 
+}
