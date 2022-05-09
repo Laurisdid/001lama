@@ -39,3 +39,7 @@ switch(kas){
         console.log('labanakt')
 
 }
+
+
+// nuo nulio iki begalybes while
+// nuo 1 iki begalybes do while
