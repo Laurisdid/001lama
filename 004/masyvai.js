@@ -118,4 +118,4 @@ while(idetaPiniguisviso<500){
     popieriniuPinigine.push(idetaPinigu);
 }
 console.table(popieriniuPinigine);
-console.table(naujaPinigine)
+console.table(naujaPinigine);
