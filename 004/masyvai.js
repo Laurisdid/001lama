@@ -2,6 +2,9 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// https://docs.google.com/document/d/1q1E8LNDrBtMSOsUQxFRW6swYC5dgKn1sq29XnapnJ9c/edit
+
+
 const pinigine = [];
 let piniginesDydis = rand(10, 30);
 let Suma = 0;
@@ -118,4 +121,22 @@ while(idetaPiniguisviso<500){
     popieriniuPinigine.push(idetaPinigu);
 }
 console.table(popieriniuPinigine);
+
+naujaPinigine.push(popieriniuPinigine);
+console.table(naujaPinigine);
+// nepavyko atspauzdinti visos pinigines
+
+//17
+let laimingiBilietai=0;
+for (let i=0;i<bilietuSkyrius.length;i++){
+    if(bilietuSkyrius[i]%777==0){
+        laimingiBilietai++;
+    }
+}
+console.log(laimingiBilietai)
+//18
+let nuotraukos= ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'];
+nuotraukos = nuotraukos.sort((a,b) => a.length - b.length);
+console.log(nuotraukos);
+naujaPinigine.push(nuotraukos);
 console.table(naujaPinigine);
