@@ -46,7 +46,8 @@ while (masyvas.length < 40) {
     masyvas.push(rand(5, 25))
 }
 console.table(masyvas)
-// Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių (pagal neporinį-porinį indeksą, ne reikšmę);
+// Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių,
+// o kitas iš porinių (pagal neporinį-porinį indeksą, ne reikšmę);
 let lyginisMasyvas = [];
 let nelygisnisMasyvas = [];
 for (let i = 0; i < masyvas.length; i++) {
@@ -90,7 +91,8 @@ for (let i = 0; i < 200; i++) {
     }
 }
 console.table(raidziuMas)
-// Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. Sudėkite masyvus, sudėdami atitinkamas reikšmes. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
+// Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. Sudėkite masyvus, sudėdami atitinkamas reikšmes.
+//Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
 let raidziuMas2 = []; let raidziuMas3 = [];
 for (let i = 0; i < 200; i++) {
     let randomsk = rand(1, 4)
@@ -128,12 +130,31 @@ for (let i = 0; i < raidziuMas.length; i++){
     }
 }
 console.log('pasikartojancios :',pasikartReiksm, 'unikalios ',unikaliuReiksm)
-    //5 Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+    //5 Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100.
+    // Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+    let masyvas5a=[];let masyvas5b=[];
     for (let i =0; i < 100; i++) {
-        
+        masyvas5a.push(rand(100,999));
+        masyvas5b.push(rand(100,999));
     }
 
+    let uniqueArray = [...new Set(masyvas5a)];
+    while(uniqueArray.length<100){
+        uniqueArray.push(rand(100,999))
+        uniqueArray = [...new Set(uniqueArray)];
+    }
+    let uniqueArray2 = [...new Set(masyvas5b)];
+    while(uniqueArray.length<100){
+        uniqueArray2.push(rand(100,999))
+        uniqueArray2 = [...new Set(uniqueArray2)];
+    }
+    console.log(masyvas5a)
+    console.log(uniqueArray)
+
+
+
     //6 Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
+    
     //7 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
     //8 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
 
@@ -142,3 +163,4 @@ console.log('pasikartojancios :',pasikartReiksm, 'unikalios ',unikaliuReiksm)
 for (let i = 2; i < 10; i++) {
     ma.push(ma[i - 1] + ma[i - 2]);
 }
+console.log(ma);
