@@ -84,3 +84,9 @@ console.log(map.has('katinas'))
 const masmap=[...map];
 console.log(map.size)
 console.log(map)
+
+const se = new Set();
+se.add({t:'cat'});
+se.add('dog');
+se.add({t:'cat'});
+console.log(se);
