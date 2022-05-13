@@ -121,52 +121,77 @@ for (let i = 0; i < 200; i++) {
 console.table(raidziuMas2)
 console.table(raidziuMas3)
 let unikaliuReiksm = 0;
-let pasikartReiksm=0;
-for (let i = 0; i < raidziuMas.length; i++){
-    if(raidziuMas[i]===raidziuMas2[i]||raidziuMas2[i]===raidziuMas3[i]||raidziuMas[i]===raidziuMas3[i]){
+let pasikartReiksm = 0;
+for (let i = 0; i < raidziuMas.length; i++) {
+    if (raidziuMas[i] === raidziuMas2[i] || raidziuMas2[i] === raidziuMas3[i] || raidziuMas[i] === raidziuMas3[i]) {
         pasikartReiksm++;
-    }else{
+    } else {
         unikaliuReiksm++;
     }
 }
-console.log('pasikartojancios :',pasikartReiksm, 'unikalios ',unikaliuReiksm)
-    //5 Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100.
-    // Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
-    let masyvas5a=[];let masyvas5b=[];
-    for (let i =0; i < 100; i++) {
-        masyvas5a.push(rand(100,999));
-        masyvas5b.push(rand(100,999));
+console.log('pasikartojancios :', pasikartReiksm, 'unikalios ', unikaliuReiksm)
+//5 Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100.
+// Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+let masyvas5a = []; let masyvas5b = [];
+for (let i = 0; i < 100; i++) {
+    masyvas5a.push(rand(100, 999));
+    masyvas5b.push(rand(100, 999));
+}
+
+let uniqueArray = [...new Set(masyvas5a)];
+while (uniqueArray.length < 100) {
+    uniqueArray.push(rand(100, 999))
+    uniqueArray = [...new Set(uniqueArray)];
+}
+let uniqueArray2 = [...new Set(masyvas5b)];
+while (uniqueArray.length < 100) {
+    uniqueArray2.push(rand(100, 999))
+    uniqueArray2 = [...new Set(uniqueArray2)];
+}
+console.log('uniqueArray2')
+console.log(uniqueArray2)
+console.log(uniqueArray)
+
+
+
+//6 Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
+const numberRemove = new Set(masyvas5b)
+const newArray6 = masyvas5a.filter((Number) => {
+    return !numberRemove.has(Number);
+});
+console.log('---------6----');
+console.log(newArray6)
+
+//7 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
+const array7 = [];
+let result;
+    for (let i = 0; i < uniqueArray.length; i++) {
+        for (let j = 0; j < uniqueArray2.length; j++) {
+            if (uniqueArray[i] === uniqueArray2[j]) {
+                array7.push(uniqueArray[i])
+                result = true;
+                break;
+            }
+        }
+        if (result) {
+            break;
+        }
     }
 
-    let uniqueArray = [...new Set(masyvas5a)];
-    while(uniqueArray.length<100){
-        uniqueArray.push(rand(100,999))
-        uniqueArray = [...new Set(uniqueArray)];
-    }
-    let uniqueArray2 = [...new Set(masyvas5b)];
-    while(uniqueArray.length<100){
-        uniqueArray2.push(rand(100,999))
-        uniqueArray2 = [...new Set(uniqueArray2)];
-    }
-    console.log(uniqueArray2)
-    console.log(uniqueArray)
+console.log(array7)
 
+//8 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės
+//, o jo reikšmės iš būtų antrojo masyvo.
+let masyvas8=[];
+let a;
+let indexkeitiklis =function(index,skaiius){
+    a=index;
+    index=skaiius;
+    skaiius=a
+}
 
-
-    //6 Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
-    const numberRemove = new Set(masyvas5b)
-    const newArray6=masyvas5a.filter((Number)=>{
-        return !numberRemove.has(Number);
-    });
-    console.log('---------6----');
-    console.log(newArray6)
-
-    //7 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
-
-    //8 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
-
-    //Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
-    let ma = [rand(5, 25), rand(5, 25)]
+//Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+let ma = [rand(5, 25), rand(5, 25)]
 for (let i = 2; i < 10; i++) {
     ma.push(ma[i - 1] + ma[i - 2]);
 }
