@@ -148,14 +148,21 @@ console.log('pasikartojancios :',pasikartReiksm, 'unikalios ',unikaliuReiksm)
         uniqueArray2.push(rand(100,999))
         uniqueArray2 = [...new Set(uniqueArray2)];
     }
-    console.log(masyvas5a)
+    console.log(uniqueArray2)
     console.log(uniqueArray)
 
 
 
     //6 Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
-    
+    const numberRemove = new Set(masyvas5b)
+    const newArray6=masyvas5a.filter((Number)=>{
+        return !numberRemove.has(Number);
+    });
+    console.log('---------6----');
+    console.log(newArray6)
+
     //7 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
+
     //8 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
 
     //Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
